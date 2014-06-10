@@ -1,7 +1,8 @@
 SpreeUpsAddressValidation
 =========================
 
-Introduction goes here.
+This extension aims to make it simple to validate your customers' shipping
+addresses using the Address Validation service which UPS provides.
 
 Installation
 ------------
@@ -36,4 +37,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_ups_address_validation/factories'
 ```
 
-Copyright (c) 2014 [name of extension creator], released under the New BSD License
+Copyright (c) 2014 [Brady Somerville], released under the New BSD License

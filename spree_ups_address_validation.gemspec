@@ -3,8 +3,8 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_ups_address_validation'
   s.version     = '2.2.2'
-  s.summary     = 'TODO: Add gem summary here'
-  s.description = 'TODO: Add (optional) gem description here'
+  s.summary     = 'Validate your spree shipping addresses'
+  s.description = 'Validate your spree shipping addresses'
   s.required_ruby_version = '>= 1.9.3'
 
   # s.author    = 'You'
@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency 'spree_core', '~> 2.2.2'
+  s.add_dependency 'address_validator'
 
   s.add_development_dependency 'capybara', '~> 2.1'
   s.add_development_dependency 'coffee-rails'
