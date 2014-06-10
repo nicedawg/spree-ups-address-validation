@@ -20,6 +20,10 @@ bundle
 bundle exec rails g spree_ups_address_validation:install
 ```
 
+You'll need to configure config/initializers/spree_ups_address_validation.rb
+using credentials you obtain from UPS here:
+https://www.ups.com/upsdeveloperkit?loc=en_US
+
 Testing
 -------
 
