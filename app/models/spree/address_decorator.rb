@@ -2,13 +2,14 @@ module Spree
   Address.class_eval do
 
     @ups_response = nil
+    @ups_suggestions = nil
 
     def ups_response
       @ups_response ||= get_ups_response
     end
 
     def ups_suggestions
-      ups_response.suggestions
+      @ups_suggestions ||= ups_response.suggestions
     end
 
     def update_address_from_ups
@@ -28,8 +29,7 @@ module Spree
           country: country.try(:iso),
         )
         validator = AddressValidator::Validator.new
-        response = validator.validate(address)
-        response
+        validator.validate(address)
       end
 
       def update_from_ups(ups_address)
