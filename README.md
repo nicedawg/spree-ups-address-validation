@@ -10,7 +10,8 @@ Installation
 Add spree_ups_address_validation to your Gemfile:
 
 ```ruby
-gem 'spree_ups_address_validation'
+gem 'spree_ups_address_validation', github: 'nicedawg/spree-ups-address-validation', branch: '2-2-stable'
+gem 'address_validator', github: 'nicedawg/address-validator'
 ```
 
 Bundle your dependencies and run the installation generator:
