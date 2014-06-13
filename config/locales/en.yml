@@ -1,5 +1,4 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  spree:
+    ups_address_invalid: "Shipping address appears to be invalid."
+    ups_address_ambiguous: "Shipping address appears to be invalid. Please pick from among the suggestions below."
