@@ -7,7 +7,7 @@
         <div class="ups-address-validation-suggestion-street"><%= suggestion.street1 %></div>
         <div class="ups-address-validation-suggestion-city-state-zip">
           <div class="ups-address-validation-suggestion-city"><%= suggestion.city %></div>
-          <div class="ups-address-validation-suggestion-state" data-state-id="<%= state.id %>"><%= Spree::State.find_by(abbr: suggestion.state).name %></div>
+          <div class="ups-address-validation-suggestion-state" data-state-id="<%= state.id %>"><%= state.name %></div>
           <div class="ups-address-validation-suggestion-zip"><%= [suggestion.zip, suggestion.zip_extended].join("-") %></div>
         </div>
         <div class="ups-address-validation-suggestion-use-this-one">
