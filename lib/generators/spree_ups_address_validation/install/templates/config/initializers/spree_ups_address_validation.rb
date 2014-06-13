@@ -4,3 +4,5 @@ AddressValidator.configure do |config|
   config.password = 'insert_valid_password'
   config.maximum_list_size = 5 # How many results do you want from UPS?
 end
+
+Spree::PermittedAttributes.permitted_checkout_attributes << :skip_ups_validation

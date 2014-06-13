@@ -1,4 +1,10 @@
-<% if @order.shipping_address.ups_suggestions.any? %>
+<% if @order.state == "address" && @order.shipping_address.ups_suggestions.any? %>
+  <div class="ups-address-validation-skip-container">
+    <label>
+      <input type="checkbox" />
+      <%= Spree.t(:skip_ups_address_validation) %>
+    </label>
+  </div>
   <div class="ups-address-validation-suggestions">
     <h3>Suggested Addresses</h3>
     <% @order.shipping_address.ups_suggestions.each do |suggestion| %>

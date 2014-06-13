@@ -3,6 +3,10 @@
 
 $(document).ready(function () {
 
+  $(".ups-address-validation-skip-container").on('change', function() {
+    $("#order_skip_ups_validation").val( $("input[type=checkbox]", this).is(":checked") ? "1" : "0" );
+  });
+
   $(".ups-address-validation-suggestion-use-this-one button").on('click', function() {
 
     var $suggestion = $(this).parents(".ups-address-validation-suggestion");
