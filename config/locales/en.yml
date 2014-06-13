@@ -2,3 +2,4 @@ en:
   spree:
     ups_address_invalid: "Shipping address appears to be invalid."
     ups_address_ambiguous: "Shipping address appears to be invalid. Please pick from among the suggestions below."
+    skip_ups_address_validation: "Skip Address Validation"
