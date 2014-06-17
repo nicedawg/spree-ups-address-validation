@@ -3,8 +3,8 @@ module Spree
 
     attr_accessor :skip_ups_validation
 
-    before_validation :update_shipping_address_from_ups, unless: :should_skip_ups_validation
-    validate :shipping_address_is_valid_via_ups, unless: :should_skip_ups_validation
+    before_validation :update_shipping_address_from_ups, if: :should_perform_ups_validation
+    validate :shipping_address_is_valid_via_ups, if: :should_perform_ups_validation
 
     private
 
@@ -20,8 +20,8 @@ module Spree
         end
       end
 
-      def should_skip_ups_validation
-        skip_ups_validation == "1"
+      def should_perform_ups_validation
+        skip_ups_validation == "0"
       end
   end
 end
