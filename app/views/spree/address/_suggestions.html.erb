@@ -10,7 +10,8 @@
     <% @order.shipping_address.ups_suggestions.each do |suggestion| %>
       <div class="ups-address-validation-suggestion">
         <% state = Spree::State.find_by(abbr: suggestion.state) %>
-        <div class="ups-address-validation-suggestion-street"><%= suggestion.street1 %></div>
+        <div class="ups-address-validation-suggestion-street1"><%= suggestion.street1 %></div>
+        <div class="ups-address-validation-suggestion-street2"><%= suggestion.street2 %></div>
         <div class="ups-address-validation-suggestion-city-state-zip">
           <div class="ups-address-validation-suggestion-city"><%= suggestion.city %></div>
           <div class="ups-address-validation-suggestion-state" data-state-id="<%= state.id %>"><%= state.name %></div>

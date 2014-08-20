@@ -23,6 +23,7 @@ module Spree
         address = AddressValidator::Address.new(
           name: full_name,
           street1: address1,
+          street2: address2,
           city: city,
           state: state_text,
           zip: zipcode,
@@ -36,6 +37,7 @@ module Spree
         address = ups_response.address
 
         self.address1 = address.street1
+        self.address2 = address.street2
         self.city = address.city
         self.state = Spree::State.find_by(abbr: address.state)
         self.zipcode = [address.zip, address.zip_extended].join("-")

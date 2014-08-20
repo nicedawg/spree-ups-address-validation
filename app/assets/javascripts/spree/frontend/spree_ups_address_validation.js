@@ -11,7 +11,8 @@ $(document).ready(function () {
 
     var $suggestion = $(this).parents(".ups-address-validation-suggestion");
 
-    $("#order_ship_address_attributes_address1").val( $(".ups-address-validation-suggestion-street", $suggestion).html() );
+    $("#order_ship_address_attributes_address1").val( $(".ups-address-validation-suggestion-street1", $suggestion).html() );
+    $("#order_ship_address_attributes_address2").val( $(".ups-address-validation-suggestion-street2", $suggestion).html() );
     $("#order_ship_address_attributes_city").val( $(".ups-address-validation-suggestion-city", $suggestion).html() );
 
     var state_id = $(".ups-address-validation-suggestion-state", $suggestion).data('state-id');
