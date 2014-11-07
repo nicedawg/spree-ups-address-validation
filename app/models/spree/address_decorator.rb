@@ -1,6 +1,8 @@
 module Spree
   Address.class_eval do
 
+    @@us_50_states = %w[AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY]
+
     @ups_response = nil
     @ups_suggestions = nil
 
@@ -16,6 +18,11 @@ module Spree
       if ups_response.valid?
         update_from_ups(ups_response.address)
       end
+    end
+
+    def is_us_50?
+      # return true if it's one of the US 50 states. otherwise, UPS Address Validation won't cover it
+      state.country.iso3 == "USA" && @@us_50_states.include?(state.abbr)
     end
 
     private

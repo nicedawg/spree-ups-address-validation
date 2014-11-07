@@ -21,7 +21,7 @@ module Spree
       end
 
       def should_perform_ups_validation
-        skip_ups_validation == "0"
+        skip_ups_validation == "0" && ship_address.is_us_50?
       end
   end
 end
