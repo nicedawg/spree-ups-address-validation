@@ -14,12 +14,6 @@ module Spree
       @ups_suggestions ||= ups_response.suggestions
     end
 
-    def update_address_from_ups
-      if ups_response.valid?
-        update_from_ups(ups_response.address)
-      end
-    end
-
     def is_us_50?
       # return true if it's one of the US 50 states. otherwise, UPS Address Validation won't cover it
       state.country.iso3 == "USA" && @@us_50_states.include?(state.abbr)
@@ -39,16 +33,5 @@ module Spree
         validator = AddressValidator::Validator.new
         validator.validate(address)
       end
-
-      def update_from_ups(ups_address)
-        address = ups_response.address
-
-        self.address1 = address.street1
-        self.address2 = address.street2
-        self.city = address.city
-        self.state = Spree::State.find_by(abbr: address.state)
-        self.zipcode = [address.zip, address.zip_extended].join("-")
-      end
-
   end
 end
