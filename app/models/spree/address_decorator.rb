@@ -14,7 +14,7 @@ module Spree
       # Strip out any suggestions which match our current address
       @ups_suggestions ||= ups_response.suggestions.reject do |s|
         s.street1 == address1 \
-        && s.street2 == address2 \
+        && (s.street2.blank? && address2.blank? || s.street2 == address2) \
         && s.city == city \
         && s.state == state_text \
         && [s.zip, s.zip_extended].join('-') == zipcode
