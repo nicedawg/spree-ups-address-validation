@@ -7,16 +7,12 @@ module Spree
 
     private
 
-      def update_shipping_address_from_ups
-        ship_address.update_address_from_ups
-      end
-
       def shipping_address_is_valid_via_ups
         if ship_address.ups_response.no_candidates?
           errors.add(:base, Spree.t(:ups_address_invalid))
         elsif ship_address.ups_response.ambiguous?
           errors.add(:base, Spree.t(:ups_address_ambiguous))
-        elsif ship_address.ups_response.valid?
+        elsif ship_address.ups_suggestions.any?
           errors.add(:base, Spree.t(:ups_address_valid))
         end
       end
