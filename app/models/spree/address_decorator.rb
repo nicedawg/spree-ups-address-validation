@@ -12,6 +12,7 @@ module Spree
 
     def ups_suggestions
       return [] if empty?
+      return [] if ups_response.no_candidates?
       # Strip out any suggestions which match our current address
       @ups_suggestions ||= ups_response.suggestions.reject do |s|
         s.street1 == address1 \
