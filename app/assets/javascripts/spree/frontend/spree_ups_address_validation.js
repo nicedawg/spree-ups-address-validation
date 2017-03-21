@@ -25,7 +25,7 @@ $(document).ready(function () {
       $("#order_" + value + "_address_attributes_state_id option[value=" + state_id + "]").attr('selected', 'selected');
       $("#order_" + value + "_address_attributes_state_id").trigger('change');
 
-      $("#order_" + value + "_address_attributes_zipcode").val( $(".ups-address-validation-suggestion-zip", $suggestion).html() );
+      $("#order_" + value + "_address_attributes_zipcode").val( $(".ups-address-validation-suggestion-zip", $suggestion).text() );
     });
 
     $('html, body').animate({
